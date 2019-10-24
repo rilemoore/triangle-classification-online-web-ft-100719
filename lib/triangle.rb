@@ -9,7 +9,6 @@ class Triangle
   end
   
   def kind
-    
     triangle_array = [:side1, :side2, :side3].sort
     
     raise TriangleError, "Illegal Triangle" unless triangle_array[0] > 0
@@ -17,10 +16,11 @@ class Triangle
     
     if(@side1 == @side2 && @side2 == @side3 && @side3 == @side1)
       return :equilateral
+    elsif(@side1 == @side2 || @side2 == @side3 || @side3 == @side1 )
+      return :isosceles
+    else
+      return :scalene
     end
-    
-    if(side1 == side2 || side2 == side3 || side3 == side1 )
-    
   end
   
   class TriangleError < StandardError
