@@ -9,7 +9,7 @@ class Triangle
   end
   
   def kind
-    triangle_array = [:side1, :side2, :side3].sort
+    triangle_array = [@side1, @side2, @side3].sort
     
     raise TriangleError, "Illegal Triangle" unless triangle_array[0] > 0
     raise TriangleError, "Illegal Triangle" unless triangle_array[0] + triangle_array[1] > triangle_array[2]
